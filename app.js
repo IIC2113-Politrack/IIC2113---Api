@@ -72,10 +72,3 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
-
-
-// User = require('./api/models/userModel');
-// Comment = require('./api/models/commentModel');
-// Proposal = require('./api/models/proposalModel');
-// Evidence = require('./api/models/evidenceModel');
-// Organization = require('./api/models/organizationModel');

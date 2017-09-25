@@ -3,17 +3,17 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var CommentSchema = new Schema({
-    firstname: {
+    content: {
         type: String,
         required: true
     },
-    lastname: {
-        type: String,
-        required: true
+    numUpvotes: {
+        type: Number,
+        default: 0
     },
-    email: {
-        type: String,
-        required: true
+    numDownvotes: {
+        type: Number,
+        default: 0
     }
 },  {timestamps: true});
 

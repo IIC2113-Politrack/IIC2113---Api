@@ -14,7 +14,53 @@ var UserSchema = new Schema({
     email: {
         type: String,
         required: true
-    }
-},  {timestamps: true});
+    },
+    password: {
+        type: String
+    },
+    followedProposals: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Proposal'
+        }
+    ],
+    isOrganizationAdmin: {
+        type: Boolean,
+        default: false
+    },
+    isPolitician: {
+        type: Boolean,
+        default: false
+    },
+    organization: {
+        type: Schema.Types.ObjectId,
+        ref: 'Organization',
+        default: null
+    },
+    evidences: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Evidence'
+        }
+    ]
+}, {timestamps: true});
+
+UserSchema.methods.addEvidence = function addEvidence(evidenceId) {
+    // only organization admins can add evidence.
+    if (!this.isOrganizationAdmin) {
+        return
+    };
+    // this method should relate the evidence to the organizationAdmin uploading it
+    return;
+};
+
+UserSchema.methods.subscribeToProposal = function subscribeToProposal(proposalId) {
+    // only politician can subscribe to a proposal.
+    if (!this.isPolitician) {
+        return
+    };
+    // this method should relate the proposal to the politician subscribing to it
+    return;
+};
 
 module.exports = mongoose.model('Users', UserSchema);
