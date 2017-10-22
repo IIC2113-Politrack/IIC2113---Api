@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('tarea1:server');
 var http = require('http');
+var fs = require('fs');
 
 /**
  * Get port from environment and store in Express.
@@ -76,6 +77,21 @@ function onError(error) {
       throw error;
   }
 }
+
+// const proposals = JSON.parse(fs.readFileSync(__dirname + '/proposals.json', 'utf-8'));
+// var mongoose = require('mongoose'),
+//     Proposal = require('../api/models/proposalModel');
+
+// async function loadProposals() {
+//   try {
+//     await Proposal.insertMany(proposals.slice(0, 15));    
+//     console.log('Done!');
+//   } catch(e) {
+//     console.log(e);
+//   }
+// }
+
+// loadProposals();
 
 /**
  * Event listener for HTTP server "listening" event.

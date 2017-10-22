@@ -1,16 +1,16 @@
-'use strict';
-module.exports = function (app) {
-    var users = require('../controllers/userController');
+var express = require('express');
+var router = express.Router();
+var users = require('../controllers/userController');
 
-    // user Routes
-    app
-        .route('/users')
-        .get(users.list_all_users)
-        .post(users.create_a_user);
+/* GET home page. */
+router.get('/', users.list_all_users);
 
-    app
-        .route('/users/:userId')
-        .get(users.read_a_user)
-        .put(users.update_a_user)
-        .delete(users.delete_a_user);
-};
+router.post('/', users.create_a_user);
+
+router.get('/:userId', users.read_a_user);
+
+router.put('/:userId', users.update_a_user);
+
+router.delete('/:userId', users.delete_a_user);
+
+module.exports = router;

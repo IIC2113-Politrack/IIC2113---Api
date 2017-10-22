@@ -28,10 +28,6 @@ var UserSchema = new Schema({
         type: Boolean,
         default: false
     },
-    isPolitician: {
-        type: Boolean,
-        default: false
-    },
     organization: {
         type: Schema.Types.ObjectId,
         ref: 'Organization',

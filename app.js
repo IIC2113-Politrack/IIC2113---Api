@@ -8,12 +8,12 @@ var bodyParser = require('body-parser');
 
 
 // Routes
-var index = require('./api/routes/indexRoutes');
-var userRoutes = require('./api/routes/userRoutes');
-var commentRoutes = require('./api/routes/commentRoutes');
-var proposalRoutes = require('./api/routes/proposalRoutes');
-var evidenceRoutes = require('./api/routes/evidenceRoutes');
-var organizationRoutes = require('./api/routes/organizationRoutes');
+var indexRouter = require('./api/routes/indexRoutes');
+var usersRouter = require('./api/routes/userRoutes');
+var commentsRouter = require('./api/routes/commentRoutes');
+var proposalsRouter = require('./api/routes/proposalRoutes');
+var evidencesRouter = require('./api/routes/evidenceRoutes');
+var organizationsRouter = require('./api/routes/organizationRoutes');
 
 var app = express();
 
@@ -45,12 +45,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors())
 
 // use routes as middleware
-app.use('/', index);
-userRoutes(app);
-commentRoutes(app);
-proposalRoutes(app);
-evidenceRoutes(app);
-organizationRoutes(app);
+app.use('/', indexRouter);
+app.use('/api/comments', commentsRouter);
+app.use('/api/evidences', evidencesRouter);
+app.use('/api/organizations', organizationsRouter);
+app.use('/api/proposals', proposalsRouter);
+app.use('/api/users', usersRouter);
 
 
 // catch 404 and forward to error handler

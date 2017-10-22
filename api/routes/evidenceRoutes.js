@@ -1,16 +1,16 @@
-'use strict';
-module.exports = function (app) {
-    var evidences = require('../controllers/evidenceController');
+var express = require('express');
+var router = express.Router();
+var evidences = require('../controllers/evidenceController');
 
-    // evidence Routes
-    app
-        .route('/evidences')
-        .get(evidences.list_all_evidences)
-        .post(evidences.create_a_evidence);
+/* GET home page. */
+router.get('/', evidences.list_all_evidences);
 
-    app
-        .route('/evidences/:evidenceId')
-        .get(evidences.read_a_evidence)
-        .put(evidences.update_a_evidence)
-        .delete(evidences.delete_a_evidence);
-};
+router.post('/', evidences.create_a_evidence);
+
+router.get('/:evidenceId', evidences.read_a_evidence);
+
+router.put('/:evidenceId', evidences.update_a_evidence);
+
+router.delete('/:evidenceId', evidences.delete_a_evidence);
+
+module.exports = router;

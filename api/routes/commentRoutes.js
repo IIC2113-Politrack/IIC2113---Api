@@ -1,16 +1,16 @@
-'use strict';
-module.exports = function (app) {
-    var comments = require('../controllers/commentController');
+var express = require('express');
+var router = express.Router();
+var comments = require('../controllers/commentController');
 
-    // comment Routes
-    app
-        .route('/comments')
-        .get(comments.list_all_comments)
-        .post(comments.create_a_comment);
+/* GET home page. */
+router.get('/', comments.list_all_comments);
 
-    app
-        .route('/comments/:commentId')
-        .get(comments.read_a_comment)
-        .put(comments.update_a_comment)
-        .delete(comments.delete_a_comment);
-};
+router.post('/', comments.create_a_comment);
+
+router.get('/:commentId', comments.read_a_comment);
+
+router.put('/:commentId', comments.update_a_comment);
+
+router.delete('/:commentId', comments.delete_a_comment);
+
+module.exports = router;

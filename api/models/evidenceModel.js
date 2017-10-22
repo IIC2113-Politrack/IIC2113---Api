@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var EvidenceSchema = new Schema({
     politician: {
         type: Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'Politician',
         required: true
     },
     proposal: {
