@@ -14,6 +14,7 @@ var commentsRouter = require('./api/routes/commentRoutes');
 var proposalsRouter = require('./api/routes/proposalRoutes');
 var evidencesRouter = require('./api/routes/evidenceRoutes');
 var organizationsRouter = require('./api/routes/organizationRoutes');
+var politiciansRouter = require('./api/routes/politicianRoutes');
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/api/evidences', evidencesRouter);
 app.use('/api/organizations', organizationsRouter);
 app.use('/api/proposals', proposalsRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/politicians', politiciansRouter);
 
 
 // catch 404 and forward to error handler
