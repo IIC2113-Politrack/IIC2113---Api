@@ -23,7 +23,13 @@ mongoose.Promise = global.Promise;
 var mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
 mongoDB = "mongodb://loscabros:123123@ds149324.mlab.com:49324/politrack";
 
-var promise = mongoose.connect(mongoDB, {useMongoClient: true});
+var config = {};
+config.mongoURI = {
+  development: mongoDB,
+  test: 'mongodb://localhost/node-test'
+};
+
+var promise = mongoose.connect(config.mongoURI[app.settings.env], {useMongoClient: true});
 promise.then(function (db) {
   var database = mongoose.connection;
   database.on('error', console.error.bind(console, 'MongoDB connection error:'));
