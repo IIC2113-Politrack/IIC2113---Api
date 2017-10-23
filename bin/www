@@ -59,9 +59,9 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
+  var bind = typeof port === 'string' ?
+    'Pipe ' + port :
+    'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -78,13 +78,15 @@ function onError(error) {
   }
 }
 
-// const proposals = JSON.parse(fs.readFileSync(__dirname + '/proposals.json', 'utf-8'));
+// SCRIPTS ...
+
+// const proposals = JSON.parse(fs.readFileSync(__dirname + '/politicians.json', 'utf-8'));
 // var mongoose = require('mongoose'),
-//     Proposal = require('../api/models/proposalModel');
+//     Proposal = require('../api/models/politicianModel');
 
 // async function loadProposals() {
 //   try {
-//     await Proposal.insertMany(proposals.slice(0, 15));    
+//     await Proposal.insertMany(proposals);    
 //     console.log('Done!');
 //   } catch(e) {
 //     console.log(e);
@@ -93,14 +95,39 @@ function onError(error) {
 
 // loadProposals();
 
+// function genRandom(limit) {
+//   return Math.floor(Math.random() * limit)
+// }
+
+// let mongoose = require('mongoose'),
+//   Politician = require('../api/models/politicianModel'),
+//   Proposal = require('../api/models/proposalModel');
+
+// Proposal.find({}, function (err, proposals) {
+//   Politician.find({}, (err, politicians) => {
+//     for (let politician of politicians) {
+//       console.log("politician: " + politician.firstname + " " + politician.lastname)
+//       for (let i of [0, 1, 2]) {
+//         let index = genRandom(15);
+//         console.log(index)
+//         let propId = proposals[index]._id
+//         politician.addProposal(propId);
+//       }
+//     }
+//   })
+// })
+
+
+
+
 /**
  * Event listener for HTTP server "listening" event.
  */
 
 function onListening() {
   var addr = server.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
+  var bind = typeof addr === 'string' ?
+    'pipe ' + addr :
+    'port ' + addr.port;
   debug('Listening on ' + bind);
 }
