@@ -4,50 +4,50 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('tarea1:server');
-var http = require('http');
-var fs = require('fs');
+let app = require('../app')
+let debug = require('debug')('tarea1:server')
+let http = require('http')
+let scripts = require('./scripts')
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
+let port = normalizePort(process.env.PORT || '3000')
+app.set('port', port)
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+let server = http.createServer(app)
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.listen(port)
+server.on('error', onError)
+server.on('listening', onListening)
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  let port = parseInt(val, 10)
 
   if (isNaN(port)) {
     // named pipe
-    return val;
+    return val
   }
 
   if (port >= 0) {
     // port number
-    return port;
+    return port
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -56,78 +56,36 @@ function normalizePort(val) {
 
 function onError(error) {
   if (error.syscall !== 'listen') {
-    throw error;
+    throw error
   }
 
-  var bind = typeof port === 'string' ?
+  let bind = typeof port === 'string' ?
     'Pipe ' + port :
-    'Port ' + port;
+    'Port ' + port
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
+      console.error(bind + ' requires elevated privileges')
+      process.exit(1)
+      break
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
+      console.error(bind + ' is already in use')
+      process.exit(1)
+      break
     default:
-      throw error;
+      throw error
   }
 }
-
-// SCRIPTS ...
-
-// const proposals = JSON.parse(fs.readFileSync(__dirname + '/politicians.json', 'utf-8'));
-// var mongoose = require('mongoose'),
-//     Proposal = require('../api/models/politicianModel');
-
-// async function loadProposals() {
-//   try {
-//     await Proposal.insertMany(proposals);    
-//     console.log('Done!');
-//   } catch(e) {
-//     console.log(e);
-//   }
-// }
-
-// loadProposals();
-
-// function genRandom(limit) {
-//   return Math.floor(Math.random() * limit)
-// }
-
-// let mongoose = require('mongoose'),
-//   Politician = require('../api/models/politicianModel'),
-//   Proposal = require('../api/models/proposalModel');
-
-// Proposal.find({}, function (err, proposals) {
-//   Politician.find({}, (err, politicians) => {
-//     for (let politician of politicians) {
-//       console.log("politician: " + politician.firstname + " " + politician.lastname)
-//       for (let i of [0, 1, 2]) {
-//         let index = genRandom(15);
-//         console.log(index)
-//         let propId = proposals[index]._id
-//         politician.addProposal(propId);
-//       }
-//     }
-//   })
-// })
-
-
-
 
 /**
  * Event listener for HTTP server "listening" event.
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string' ?
+  let addr = server.address()
+  let bind = typeof addr === 'string' ?
     'pipe ' + addr :
-    'port ' + addr.port;
-  debug('Listening on ' + bind);
+    'port ' + addr.port
+  debug('Listening on ' + bind)
 }

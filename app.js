@@ -1,34 +1,54 @@
-var express = require('express');
-var cors = require('cors')
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+let express = require('express');
+let cors = require('cors')
+let path = require('path');
+let favicon = require('serve-favicon');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
+let scripts = require('./bin/scripts')
 
 
 // Routes
-var indexRouter = require('./api/routes/indexRoutes');
-var usersRouter = require('./api/routes/userRoutes');
-var commentsRouter = require('./api/routes/commentRoutes');
-var proposalsRouter = require('./api/routes/proposalRoutes');
-var evidencesRouter = require('./api/routes/evidenceRoutes');
-var organizationsRouter = require('./api/routes/organizationRoutes');
-var politiciansRouter = require('./api/routes/politicianRoutes');
+let indexRouter = require('./api/routes/indexRoutes');
+let usersRouter = require('./api/routes/userRoutes');
+let commentsRouter = require('./api/routes/commentRoutes');
+let proposalsRouter = require('./api/routes/proposalRoutes');
+let evidencesRouter = require('./api/routes/evidenceRoutes');
+let organizationsRouter = require('./api/routes/organizationRoutes');
+let politiciansRouter = require('./api/routes/politicianRoutes');
 
-var app = express();
+let app = express();
 
-//Set up mongoose connection var dbLocal = "mongodb://127.0.0.1/tarea1";
-var mongoose = require('mongoose');
+//Set up mongoose connection;
+let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-// var mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
-// var mongoDB = "mongodb://loscabros:123123@ds149324.mlab.com:49324/politrack";
-var mongoDB = "mongodb://vicente:123123@ds229295.mlab.com:29295/politrap";
+// let mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
+let mongoDB = "mongodb://vicente:123123@ds231205.mlab.com:31205/politrap-backup";
 
-var promise = mongoose.connect(mongoDB, {useMongoClient: true});
-promise.then(function (db) {
-  var database = mongoose.connection;
-  database.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+});
+mongoose.connection.on('error', function () {
+  console.log('Mongoose default connection error: ' + err);
+  if (err.message.code === 'ETIMEDOUT') {
+    console.log(err)
+    mongoose.connect(config.db.uri, opts)
+  }
+});
+mongoose.connection.on('connected', function () {
+  console.log('Mongoose default connection open to ' + mongoDB);
+  console.log("starting scripts")
+  // // POPULATE THE DATABASE
+  // scripts.loadPoliticians()
+  //   .then(() => {
+  //     scripts.loadProposals(15)
+  //       .then(() => {
+  //         scripts.assignProposalsToPoliticians()
+  //       })
+  //   })
+  //   .catch((err) => {
+  //     console.log(err)
+  //   })
 });
 
 // view engine setup
@@ -38,8 +58,13 @@ app.set('view engine', 'pug');
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json({limit: '5mb'}));
-app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}));
+app.use(bodyParser.json({
+  limit: '5mb'
+}));
+app.use(bodyParser.urlencoded({
+  extended: false,
+  limit: '5mb'
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -58,7 +83,7 @@ app.use('/api/politicians', politiciansRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -69,9 +94,8 @@ app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req
     .app
-    .get('env') === 'development'
-    ? err
-    : {};
+    .get('env') === 'development' ?
+    err : {};
 
   // render the error page
   res.status(err.status || 500);
