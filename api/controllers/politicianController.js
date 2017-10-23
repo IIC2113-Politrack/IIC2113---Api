@@ -1,56 +1,71 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Politician = require('../models/politicianModel');
+  Politician = require('../models/politicianModel');
 
-exports.list_all_politicians = function (req, res) {
-    Politician
-        .find({}, function (err, politician) {
-            if (err) 
-                res.send(err);
-            res.json(politician);
-        });
-};
-
-exports.create_a_politician = function (req, res) {
-    var new_politician = new Politician(req.body);
-    new_politician.save(function (err, politician) {
-        if (err) 
-            res.send(err);
-        res.json(politician);
+exports.listAllPoliticians = function (req, res) {
+  Politician
+    .find({}, function (err, politician) {
+      if (err)
+        res.send(err);
+      res.json(politician);
     });
 };
 
-exports.read_a_politician = function (req, res) {
-    Politician
-        .findById(req.params.politicianId, function (err, politician) {
-            if (err) 
-                res.send(err);
-            res.json(politician);
-        });
+exports.createPolitician = function (req, res) {
+  var new_politician = new Politician(req.body);
+  new_politician.save(function (err, politician) {
+    if (err)
+      res.send(err);
+    res.json(politician);
+  });
 };
 
-exports.update_a_politician = function (req, res) {
-    Politician
-        .findOneAndUpdate({
-            _id: req.params.politicianId
-        }, req.body, {
-            new: true
-        }, function (err, politician) {
-            if (err) 
-                res.send(err);
-            res.json(politician);
-        });
+exports.addProposal = function (req, res) {
+  Politician
+    .findById(req.params.politicianId, function (err, politician) {
+      if (err) {
+        res.send(err);
+      }
+      res.json(politician.addProposal(req.body.proposalId));
+    })
 };
 
-exports.delete_a_politician = function (req, res) {
+exports.readPolitician = function (req, res) {
+  Politician
+    .findById(req.params.politicianId)
+    .populate('proposals.proposal')
+    .populate('proposals.evidences')
+    .exec(function (err, politician) {
+      if (err)
+        res.send(err);
+      res.json(politician);
+    });
+};
 
-    Politician
-        .remove({
-            _id: req.params.politicianId
-        }, function (err, politician) {
-            if (err) 
-                res.send(err);
-            res.json({message: 'Politician successfully deleted'});
-        });
+exports.updatePolitician = function (req, res) {
+  Politician
+    .findOneAndUpdate({
+      _id: req.params.politicianId
+    }, req.body, {
+      new: true
+    }, function (err, politician) {
+      if (err)
+        res.send(err);
+      res.json(politician);
+    });
+};
+
+exports.deletePolitician = function (req, res) {
+
+  Politician
+    .remove({
+      _id: req.params.politicianId
+    }, function (err, politician) {
+      if (err)
+        res.send(err);
+      res.json({
+        message: 'Politician successfully deleted'
+      });
+    });
 };

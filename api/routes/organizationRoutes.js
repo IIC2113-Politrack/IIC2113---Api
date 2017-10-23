@@ -3,14 +3,14 @@ var router = express.Router();
 var organizations = require('../controllers/organizationController');
 
 /* GET home page. */
-router.get('/', organizations.list_all_organizations);
+router.get('/', organizations.listAllOrganizations);
 
-router.post('/', organizations.create_a_organization);
+router.post('/', organizations.createOrganization);
 
-router.get('/:organizationId', organizations.read_a_organization);
+router.get('/:organizationId', organizations.readOrganization);
 
-router.put('/:organizationId', organizations.update_a_organization);
+router.put('/:organizationId', organizations.updateOrganization);
 
-router.delete('/:organizationId', organizations.delete_a_organization);
+router.delete('/:organizationId', organizations.deleteOrganization);
 
 module.exports = router;

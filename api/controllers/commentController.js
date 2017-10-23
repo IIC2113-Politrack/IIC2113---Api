@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     Comment = require('../models/commentModel');
 
-exports.list_all_comments = function (req, res) {
+exports.listAllComments = function (req, res) {
     Comment
         .find({}, function (err, comment) {
             if (err) 
@@ -12,7 +12,7 @@ exports.list_all_comments = function (req, res) {
         });
 };
 
-exports.create_a_comment = function (req, res) {
+exports.createComment = function (req, res) {
     var new_comment = new Comment(req.body);
     new_comment.save(function (err, comment) {
         if (err) 
@@ -21,7 +21,7 @@ exports.create_a_comment = function (req, res) {
     });
 };
 
-exports.read_a_comment = function (req, res) {
+exports.readComment = function (req, res) {
     Comment
         .findById(req.params.commentId, function (err, comment) {
             if (err) 
@@ -30,7 +30,7 @@ exports.read_a_comment = function (req, res) {
         });
 };
 
-exports.update_a_comment = function (req, res) {
+exports.updateComment = function (req, res) {
     Comment
         .findOneAndUpdate({
             _id: req.params.commentId
@@ -43,7 +43,7 @@ exports.update_a_comment = function (req, res) {
         });
 };
 
-exports.delete_a_comment = function (req, res) {
+exports.deleteComment = function (req, res) {
 
     Comment
         .remove({

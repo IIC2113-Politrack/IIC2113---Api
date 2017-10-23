@@ -3,14 +3,16 @@ var router = express.Router();
 var politicians = require('../controllers/politicianController');
 
 /* GET home page. */
-router.get('/', politicians.list_all_politicians);
+router.get('/', politicians.listAllPoliticians);
 
-router.post('/', politicians.create_a_politician);
+router.post('/', politicians.createPolitician);
 
-router.get('/:politicianId', politicians.read_a_politician);
+router.post('/:politicianId/proposals', politicians.addProposal);
 
-router.put('/:politicianId', politicians.update_a_politician);
+router.get('/:politicianId', politicians.readPolitician);
 
-router.delete('/:politicianId', politicians.delete_a_politician);
+router.put('/:politicianId', politicians.updatePolitician);
+
+router.delete('/:politicianId', politicians.deletePolitician);
 
 module.exports = router;

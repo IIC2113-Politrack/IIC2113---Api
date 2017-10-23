@@ -21,8 +21,9 @@ var app = express();
 //Set up mongoose connection var dbLocal = "mongodb://127.0.0.1/tarea1";
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-var mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
-mongoDB = "mongodb://loscabros:123123@ds149324.mlab.com:49324/politrack";
+// var mongoDB = process.env.MONGO_DB || "mongodb://127.0.0.1/tarea1";
+// var mongoDB = "mongodb://loscabros:123123@ds149324.mlab.com:49324/politrack";
+var mongoDB = "mongodb://vicente:123123@ds229295.mlab.com:29295/politrap";
 
 var promise = mongoose.connect(mongoDB, {useMongoClient: true});
 promise.then(function (db) {

@@ -3,14 +3,14 @@ var router = express.Router();
 var evidences = require('../controllers/evidenceController');
 
 /* GET home page. */
-router.get('/', evidences.list_all_evidences);
+router.get('/', evidences.listAllEvidences);
 
-router.post('/', evidences.create_a_evidence);
+router.post('/', evidences.createEvidence);
 
-router.get('/:evidenceId', evidences.read_a_evidence);
+router.get('/:evidenceId', evidences.readEvidence);
 
-router.put('/:evidenceId', evidences.update_a_evidence);
+router.put('/:evidenceId', evidences.updateEvidence);
 
-router.delete('/:evidenceId', evidences.delete_a_evidence);
+router.delete('/:evidenceId', evidences.deleteEvidence);
 
 module.exports = router;

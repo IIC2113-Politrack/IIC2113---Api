@@ -3,14 +3,14 @@ var router = express.Router();
 var proposals = require('../controllers/proposalController');
 
 /* GET home page. */
-router.get('/', proposals.list_all_proposals);
+router.get('/', proposals.listAllProposals);
 
-router.post('/', proposals.create_a_proposal);
+router.post('/', proposals.createProposal);
 
-router.get('/:proposalId', proposals.read_a_proposal);
+router.get('/:proposalId', proposals.readProposal);
 
-router.put('/:proposalId', proposals.update_a_proposal);
+router.put('/:proposalId', proposals.updateProposal);
 
-router.delete('/:proposalId', proposals.delete_a_proposal);
+router.delete('/:proposalId', proposals.deleteProposal);
 
 module.exports = router;

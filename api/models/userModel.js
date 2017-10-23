@@ -59,4 +59,4 @@ UserSchema.methods.subscribeToProposal = function subscribeToProposal(proposalId
     return;
 };
 
-module.exports = mongoose.model('Users', UserSchema);
+module.exports = mongoose.model('User', UserSchema);

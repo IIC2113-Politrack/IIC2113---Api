@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     Organization = require('../models/organizationModel');
 
-exports.list_all_organizations = function (req, res) {
+exports.listAllOrganizations = function (req, res) {
     Organization
         .find({}, function (err, organization) {
             if (err) 
@@ -12,7 +12,7 @@ exports.list_all_organizations = function (req, res) {
         });
 };
 
-exports.create_a_organization = function (req, res) {
+exports.createOrganization = function (req, res) {
     var new_organization = new Organization(req.body);
     new_organization.save(function (err, organization) {
         if (err) 
@@ -21,7 +21,7 @@ exports.create_a_organization = function (req, res) {
     });
 };
 
-exports.read_a_organization = function (req, res) {
+exports.readOrganization = function (req, res) {
     Organization
         .findById(req.params.organizationId, function (err, organization) {
             if (err) 
@@ -30,7 +30,7 @@ exports.read_a_organization = function (req, res) {
         });
 };
 
-exports.update_a_organization = function (req, res) {
+exports.updateOrganization = function (req, res) {
     Organization
         .findOneAndUpdate({
             _id: req.params.organizationId
@@ -43,7 +43,7 @@ exports.update_a_organization = function (req, res) {
         });
 };
 
-exports.delete_a_organization = function (req, res) {
+exports.deleteOrganization = function (req, res) {
 
     Organization
         .remove({
