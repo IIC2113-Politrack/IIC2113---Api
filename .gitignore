@@ -41,3 +41,7 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Initial DB 
+bin/proposals.json
+bin/politicians.json

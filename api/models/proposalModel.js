@@ -3,33 +3,64 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ProposalSchema = new Schema({
-    name: {
-        type: String,
-        required: true
+  id: {
+    type: Number
+  },
+  title: {
+    type: String
+  },
+  slug: {
+    type: String
+  },
+  get_absolute_url: {
+    type: String
+  },
+  data: {
+    title: {
+      type: String
     },
-    content: {
-        type: String,
-        required: true
+    terms_and_conditions: {
+      type: Boolean
     },
-    state: {
-        type: Boolean,
-        default: false
+    solution_at_the_end: {
+      type: String
     },
-    evidences: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Evidence'
-        }
-    ],
-    politician: {
-        type: Schema.Types.ObjectId,
-        ref: 'Politician'
+    when: {
+      type: String,
+    },
+    solution: {
+      type: String
+    },
+    problem: {
+      type: String
+    },
+    clasification: {
+      type: String
+    },
+    causes: {
+      type: String
     }
-}, {timestamps: true});
+  },
+  proposer: {
+    type: String
+  },
+  created: {
+    type: String
+  },
+  clasification: {
+    type: String
+  },
+  is_local_meeting: {
+    type: Boolean
+  },
+  nro_supports: {
+    type: Number
+  },
+  state: {
+    type: Boolean
+  }
+}, {
+  timestamps: true
+});
 
-ProposalSchema.methods.follow = function follow(userId) {
-    // should relate the user to the current proposal
-    return;
-};
-
-module.exports = mongoose.model('Proposals', ProposalSchema);
+module.exports = mongoose.model('Proposal', ProposalSchema);

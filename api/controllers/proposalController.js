@@ -3,7 +3,7 @@
 var mongoose = require('mongoose'),
     Proposal = require('../models/proposalModel');
 
-exports.list_all_proposals = function (req, res) {
+exports.listAllProposals = function (req, res) {
     Proposal
         .find({}, function (err, proposal) {
             if (err) 
@@ -12,7 +12,7 @@ exports.list_all_proposals = function (req, res) {
         });
 };
 
-exports.create_a_proposal = function (req, res) {
+exports.createProposal = function (req, res) {
     var new_proposal = new Proposal(req.body);
     new_proposal.save(function (err, proposal) {
         if (err) 
@@ -21,7 +21,7 @@ exports.create_a_proposal = function (req, res) {
     });
 };
 
-exports.read_a_proposal = function (req, res) {
+exports.readProposal = function (req, res) {
     Proposal
         .findById(req.params.proposalId, function (err, proposal) {
             if (err) 
@@ -30,7 +30,7 @@ exports.read_a_proposal = function (req, res) {
         });
 };
 
-exports.update_a_proposal = function (req, res) {
+exports.updateProposal = function (req, res) {
     Proposal
         .findOneAndUpdate({
             _id: req.params.proposalId
@@ -43,7 +43,7 @@ exports.update_a_proposal = function (req, res) {
         });
 };
 
-exports.delete_a_proposal = function (req, res) {
+exports.deleteProposal = function (req, res) {
 
     Proposal
         .remove({

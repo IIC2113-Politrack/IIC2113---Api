@@ -1,16 +1,16 @@
-'use strict';
-module.exports = function (app) {
-    var organizations = require('../controllers/organizationController');
+var express = require('express');
+var router = express.Router();
+var organizations = require('../controllers/organizationController');
 
-    // organization Routes
-    app
-        .route('/organizations')
-        .get(organizations.list_all_organizations)
-        .post(organizations.create_a_organization);
+/* GET home page. */
+router.get('/', organizations.listAllOrganizations);
 
-    app
-        .route('/organizations/:organizationId')
-        .get(organizations.read_a_organization)
-        .put(organizations.update_a_organization)
-        .delete(organizations.delete_a_organization);
-};
+router.post('/', organizations.createOrganization);
+
+router.get('/:organizationId', organizations.readOrganization);
+
+router.put('/:organizationId', organizations.updateOrganization);
+
+router.delete('/:organizationId', organizations.deleteOrganization);
+
+module.exports = router;

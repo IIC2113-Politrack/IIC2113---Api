@@ -17,10 +17,4 @@ var OrganizationSchema = new Schema({
     }
 },  {timestamps: true});
 
-OrganizationSchema.methods.addAdmin = function addAdmin(userId) {
-    // should relate the passed user to the organization
-    // only if the user has the attribute isOrganizationAdmin setted to 'true'
-    return;
-};
-
 module.exports = mongoose.model('Organization', OrganizationSchema);
