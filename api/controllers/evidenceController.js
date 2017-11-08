@@ -9,6 +9,7 @@ exports.readEvidence = function (req, res) {
     .findById(req.params.evidenceId, function (err, evidence) {
       if (err) 
         res.send(err)
+        return
       res.json(evidence)
     })
 }
@@ -22,6 +23,7 @@ exports.updateEvidence = function (req, res) {
     }, function (err, evidence) {
       if (err) 
         res.send(err)
+        return
       res.json(evidence)
     })
 }
@@ -34,6 +36,7 @@ exports.deleteEvidence = function (req, res) {
     }, function (err, evidence) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Evidence successfully deleted'})
     })
 }

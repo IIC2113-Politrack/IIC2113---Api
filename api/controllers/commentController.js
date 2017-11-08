@@ -6,8 +6,9 @@ var mongoose = require('mongoose'),
 exports.listAllComments = function (req, res) {
   Comment
     .find({}, function (err, comment) {
-      if (err) 
+      if (err) {}
         res.send(err)
+        return
       res.json(comment)
     })
 }
@@ -17,6 +18,7 @@ exports.createComment = function (req, res) {
   new_comment.save(function (err, comment) {
     if (err) 
       res.send(err)
+      return
     res.json(comment)
   })
 }
@@ -26,6 +28,7 @@ exports.readComment = function (req, res) {
     .findById(req.params.commentId, function (err, comment) {
       if (err) 
         res.send(err)
+        return
       res.json(comment)
     })
 }
@@ -39,6 +42,7 @@ exports.updateComment = function (req, res) {
     }, function (err, comment) {
       if (err) 
         res.send(err)
+        return
       res.json(comment)
     })
 }
@@ -51,6 +55,7 @@ exports.deleteComment = function (req, res) {
     }, function (err, comment) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Comment successfully deleted'})
     })
 }

@@ -9,6 +9,7 @@ exports.listAllCommitments = function (req, res) {
     .find({}, function (err, commitment) {
       if (err) 
         res.send(err)
+        return
       res.json(commitment)
     })
 }
@@ -20,6 +21,7 @@ exports.readCommitment = function (req, res) {
     .exec(function (err, commitment) {
       if (err) 
         res.send(err)
+        return
       res.json(commitment)
     })
 }
@@ -31,6 +33,7 @@ exports.deleteCommitment = function (req, res) {
     }, function (err, commitment) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Commitment successfully deleted'})
     })
 }
@@ -42,6 +45,7 @@ exports.getAllEvidences = function (req, res) {
     .exec(function (err, commitment) {
       if (err) 
         res.send(err)
+        return
       res.json(commitment.evidences)
     })
 }
@@ -51,11 +55,13 @@ exports.addEvidence = function (req, res) {
     .findById(req.params.commitmentId, function (err, commitment) {
       if (err) {
         res.send(err)
+        return
       }
       let newEvidence = new Evidence(req.body)
       newEvidence.save(function (err, evidence) {
         if (err) 
           res.send(err)
+          return
         commitment
           .evidences
           .push(evidence._id)

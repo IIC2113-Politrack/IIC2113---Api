@@ -9,6 +9,7 @@ exports.listAllPoliticians = function (req, res) {
     .find({}, function (err, politician) {
       if (err) 
         res.send(err)
+        return
       res.json(politician)
     })
 }
@@ -18,6 +19,7 @@ exports.createPolitician = function (req, res) {
   new_politician.save(function (err, politician) {
     if (err) 
       res.send(err)
+      return
     res.json(politician)
   })
 }
@@ -29,6 +31,7 @@ exports.readPolitician = function (req, res) {
     .exec(function (err, politician) {
       if (err) 
         res.send(err)
+        return
       res.json(politician)
     })
 }
@@ -42,6 +45,7 @@ exports.updatePolitician = function (req, res) {
     }, function (err, politician) {
       if (err) 
         res.send(err)
+        return
       res.json(politician)
     })
 }
@@ -53,6 +57,7 @@ exports.deletePolitician = function (req, res) {
     }, function (err, politician) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Politician successfully deleted'})
     })
 }
@@ -62,11 +67,13 @@ exports.addCommitment = function (req, res) {
     .findById(req.params.politicianId, function (err, politician) {
       if (err) {
         res.send(err)
+        return
       }
       let commitment = new Commitment({politician: politician._id, proposal: req.body.proposalId, evidences: []})
       commitment.save(function (err, commitment) {
         if (err) 
           res.send(err)
+          return
         politician
           .commitments
           .push(commitment._id)
@@ -82,6 +89,7 @@ exports.getPoliticianCommitments = function (req, res) {
     .findById(req.params.politicianId, function (err, politician) {
       if (err) {
         res.send(err)
+        return
       }
       Commitment
         .find({politician: politician._id})
@@ -89,15 +97,9 @@ exports.getPoliticianCommitments = function (req, res) {
         .exec(function (err, commitments) {
           if (err) {
             res.send(err)
+            return
           }
           res.json(commitments)
         })
     })
 }
-
-// exports.getCommitmentEvidences = function (req, res) {   Politician
-// .findById(req.params.politicianId, function (err, politician) {       if
-// (err) {         res.send(err)       }       Commitment         .findOne({
-//       politician: politician._id,           proposal: req.params.proposalId
-//       }, function (err, commitments) {           if (err) {
-// res.send(err)           }           res.json(commitments)         })     }) }

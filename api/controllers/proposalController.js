@@ -8,6 +8,7 @@ exports.listAllProposals = function (req, res) {
     .find({}, function (err, proposal) {
       if (err) 
         res.send(err)
+        return
       res.json(proposal)
     })
 }
@@ -17,6 +18,7 @@ exports.createProposal = function (req, res) {
   new_proposal.save(function (err, proposal) {
     if (err) 
       res.send(err)
+      return
     res.json(proposal)
   })
 }
@@ -26,6 +28,7 @@ exports.readProposal = function (req, res) {
     .findById(req.params.proposalId, function (err, proposal) {
       if (err) 
         res.send(err)
+        return
       res.json(proposal)
     })
 }
@@ -39,6 +42,7 @@ exports.updateProposal = function (req, res) {
     }, function (err, proposal) {
       if (err) 
         res.send(err)
+        return
       res.json(proposal)
     })
 }
@@ -51,6 +55,7 @@ exports.deleteProposal = function (req, res) {
     }, function (err, proposal) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Proposal successfully deleted'})
     })
 }

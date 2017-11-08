@@ -8,6 +8,7 @@ exports.listAllOrganizations = function (req, res) {
     .find({}, function (err, organization) {
       if (err) 
         res.send(err)
+        return
       res.json(organization)
     })
 }
@@ -17,6 +18,7 @@ exports.createOrganization = function (req, res) {
   new_organization.save(function (err, organization) {
     if (err) 
       res.send(err)
+      return
     res.json(organization)
   })
 }
@@ -26,6 +28,7 @@ exports.readOrganization = function (req, res) {
     .findById(req.params.organizationId, function (err, organization) {
       if (err) 
         res.send(err)
+        return
       res.json(organization)
     })
 }
@@ -39,6 +42,7 @@ exports.updateOrganization = function (req, res) {
     }, function (err, organization) {
       if (err) 
         res.send(err)
+        return
       res.json(organization)
     })
 }
@@ -51,6 +55,7 @@ exports.deleteOrganization = function (req, res) {
     }, function (err, organization) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'Organization successfully deleted'})
     })
 }

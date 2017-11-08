@@ -8,6 +8,7 @@ exports.listAllUsers = function (req, res) {
     .find({}, function (err, user) {
       if (err) 
         res.send(err)
+        return
       res.json(user)
     })
 }
@@ -17,6 +18,7 @@ exports.createUser = function (req, res) {
   new_user.save(function (err, user) {
     if (err) 
       res.send(err)
+      return
     res.json(user)
   })
 }
@@ -26,6 +28,7 @@ exports.readUser = function (req, res) {
     .findById(req.params.userId, function (err, user) {
       if (err) 
         res.send(err)
+        return
       res.json(user)
     })
 }
@@ -39,6 +42,7 @@ exports.updateUser = function (req, res) {
     }, function (err, user) {
       if (err) 
         res.send(err)
+        return
       res.json(user)
     })
 }
@@ -51,6 +55,7 @@ exports.deleteUser = function (req, res) {
     }, function (err, user) {
       if (err) 
         res.send(err)
+        return
       res.json({message: 'User successfully deleted'})
     })
 }
