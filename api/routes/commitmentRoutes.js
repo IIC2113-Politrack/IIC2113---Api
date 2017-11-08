@@ -7,9 +7,9 @@ router.get('/', commitments.listAllCommitments)
 
 router.get('/:commitmentId', commitments.readCommitment)
 
-router.get('/:commitmentId/evidences', commitments.getAllEvidences)
+router.get('/:commitmentId/evidences', commitments.getCommitmentEvidences)
 
-router.post('/:commitmentId/evidences', commitments.addEvidence)
+router.post('/:commitmentId/evidences', commitments.addEvidenceToCommitment)
 
 router.delete('/:commitmentId', commitments.deleteCommitment)
 
