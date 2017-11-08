@@ -5,11 +5,11 @@ var mongoose = require('mongoose'),
 
 exports.listAllProposals = function (req, res) {
   Proposal
-    .find({}, function (err, proposal) {
+    .find({}, function (err, proposals) {
       if (err) {
         res.send(err)
       } else {
-        res.json(proposal)
+        res.json(proposals)
       }
     })
 }
