@@ -39,7 +39,7 @@ mongoose
 mongoose
   .connection
   .on('connected', function () {
-    console.log('Mongoose default connection open to ' + mongoDB)
+    console.log('Mongoose default connection open. Connected!')
     // console.log("starting scripts")
     // // POPULATE THE DATABASE scripts.loadPoliticians()   .then(() => {
     // scripts.loadProposals(15)       .then(() => {
