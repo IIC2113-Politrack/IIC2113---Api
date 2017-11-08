@@ -8,6 +8,9 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www"
   },
+  "engines": {
+    "node": "9.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IIC2113-Politrack/IIC2113---Api.git"

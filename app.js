@@ -21,8 +21,7 @@ let app = express()
 //Set up mongoose connection
 let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
-// let mongoDB = process.env.DB_URL
-let mongoDB = "mongodb://localhost/politrap"
+let mongoDB = process.env.MONGODB_URI || "mongodb://localhost/politrap"
 
 mongoose.connect(mongoDB, {useMongoClient: true})
 
