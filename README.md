@@ -31,28 +31,38 @@ The endpoints offered are the following:
 
 | http method 	| URL               	| description             	        |
 |-----------	|--------------------	|--------------------------------	|
-| GET         	| /users             	| list all the users      	        |
-| POST        	| /users             	| create new user         	        |
-| GET         	| /users/:id         	| get user information    	        |
-| PUT         	| /users/:id         	| update user information 	        |
-| DELETE      	| /users/:id         	| delete user                   	|
-| GET         	| /organizations       	| list all the organizations      	|
-| POST        	| /organizations        | create new organization         	|
-| GET         	| /organizations/:id   	| get organization information    	|
-| PUT         	| /organizations/:id   	| update organization information 	|
-| DELETE      	| /organizations/:id   	| delete organization             	|
-| GET         	| /evidences          	| list all the evidences        	|
-| POST        	| /evidences          	| create new evidence            	|
-| GET         	| /evidences/:id      	| get evidence information      	|
-| PUT         	| /evidences/:id      	| update evidence information   	|
-| DELETE      	| /evidences/:id      	| delete evidence               	|
-| GET         	| /proposals          	| list all the proposals        	|
-| POST        	| /proposals          	| create new proposal            	|
-| GET         	| /proposals/:id      	| get proposal information      	|
-| PUT         	| /proposals/:id      	| update proposal information   	|
-| DELETE      	| /proposals/:id      	| delete proposal               	|
-| GET         	| /comments          	| list all the comments           	|
-| POST        	| /comments          	| create new comment            	|
-| GET         	| /comments/:id      	| get comment information      	    |
-| PUT         	| /comments/:id      	| update comment information   	    |
-| DELETE      	| /comments/:id      	| delete comment               	    |
+| GET         	| /api/users             	| list all the users      	        |
+| POST        	| /api/users             	| create new user         	        |
+| GET         	| /api/users/:id         	| get user information    	        |
+| PUT         	| /api/users/:id         	| update user information 	        |
+| DELETE      	| /api/users/:id         	| delete user                   	|
+| GET         	| /api/organizations       	| list all the organizations      	|
+| POST        	| /api/organizations        | create new organization         	|
+| GET         	| /api/organizations/:id   	| get organization information    	|
+| PUT         	| /api/organizations/:id   	| update organization information 	|
+| DELETE      	| /api/organizations/:id   	| delete organization             	|
+| GET         	| /api/politicians                 	| list all politicians                         	|
+| POST        	| /api/politicians                 	| create politician                            	|
+| GET         	| /api/politicians/:id             	| get politician information                   	|
+| GET         	| /api/politicians/:id/commitments 	| get politician commitments (with proposals)  	|
+| POST        	| /api/politicians/:id/commitments 	| create politician commitment (to a proposal) 	|
+| PUT         	| /api/politicians/:id             	| update politician information                	|
+| DELETE      	| /api/politicians/:id             	| destroy politician                           	|
+| GET         	| /api/commitments                 	| list all commitments                         	|
+| GET         	| /api/commitments/:id             	| get commitment information                   	|
+| GET         	| /api/commitments/:id/evidences   	| list a commitment's evidences                	|
+| POST        	| /api/commitments/:id/evidences   	| create new evidence related to commitment    	|
+| DELETE      	| /api/commitments/:id             	| destroy commitment                           	|
+| GET         	| /api/proposals                   	| list all proposals                           	|
+| POST        	| /api/proposals                   	| create new proposal                          	|
+| GET         	| /api/proposals/:id               	| obtain proposal information                  	|
+| PUT         	| /api/proposals/:id               	| update proposal information                  	|
+| DELETE      	| /api/proposals/:id               	| remove proposal                              	|
+| GET         	| /api/evidences                   	| list all evidences                           	|
+| GET         	| /api/evidences/:id               	| obtain evidence information                  	|
+| DELETE      	| /api/evidences/:id               	| remove evidence                              	|
+| GET         	| /api/comments          	| list all the comments           	|
+| POST        	| /api/comments          	| create new comment            	|
+| GET         	| /api/comments/:id      	| get comment information      	    |
+| PUT         	| /api/comments/:id      	| update comment information   	    |
+| DELETE      	| /api/comments/:id      	| delete comment               	    |

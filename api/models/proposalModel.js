@@ -1,6 +1,6 @@
-'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+'use strict'
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var ProposalSchema = new Schema({
   id: {
@@ -26,7 +26,7 @@ var ProposalSchema = new Schema({
       type: String
     },
     when: {
-      type: String,
+      type: String
     },
     solution: {
       type: String
@@ -59,8 +59,6 @@ var ProposalSchema = new Schema({
   state: {
     type: Boolean
   }
-}, {
-  timestamps: true
-});
+}, {timestamps: true})
 
-module.exports = mongoose.model('Proposal', ProposalSchema);
+module.exports = mongoose.model('Proposal', ProposalSchema)
