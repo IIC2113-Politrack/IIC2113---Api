@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var organizations = require('../controllers/organizationController');
+var express = require('express')
+var router = express.Router()
+var organizations = require('../controllers/organizationController')
 
 /* GET home page. */
-router.get('/', organizations.listAllOrganizations);
+router.get('/', organizations.listAllOrganizations)
 
-router.post('/', organizations.createOrganization);
+router.post('/', organizations.createOrganization)
 
-router.get('/:organizationId', organizations.readOrganization);
+router.get('/:organizationId', organizations.readOrganization)
 
-router.put('/:organizationId', organizations.updateOrganization);
+router.put('/:organizationId', organizations.updateOrganization)
 
-router.delete('/:organizationId', organizations.deleteOrganization);
+router.delete('/:organizationId', organizations.deleteOrganization)
 
-module.exports = router;
+module.exports = router

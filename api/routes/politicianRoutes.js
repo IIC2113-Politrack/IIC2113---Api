@@ -1,18 +1,20 @@
-var express = require('express');
-var router = express.Router();
-var politicians = require('../controllers/politicianController');
+var express = require('express')
+var router = express.Router()
+var politicians = require('../controllers/politicianController')
 
 /* GET home page. */
-router.get('/', politicians.listAllPoliticians);
+router.get('/', politicians.listAllPoliticians)
 
-router.post('/', politicians.createPolitician);
+router.post('/', politicians.createPolitician)
 
-router.post('/:politicianId/proposals', politicians.addProposal);
+router.get('/:politicianId', politicians.readPolitician)
 
-router.get('/:politicianId', politicians.readPolitician);
+router.get('/:politicianId/commitments', politicians.getPoliticianCommitments)
 
-router.put('/:politicianId', politicians.updatePolitician);
+router.post('/:politicianId/commitments', politicians.addCommitment)
 
-router.delete('/:politicianId', politicians.deletePolitician);
+router.put('/:politicianId', politicians.updatePolitician)
 
-module.exports = router;
+router.delete('/:politicianId', politicians.deletePolitician)
+
+module.exports = router

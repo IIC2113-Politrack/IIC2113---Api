@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var comments = require('../controllers/commentController');
+var express = require('express')
+var router = express.Router()
+var comments = require('../controllers/commentController')
 
 /* GET home page. */
-router.get('/', comments.listAllComments);
+router.get('/', comments.listAllComments)
 
-router.post('/', comments.createComment);
+router.post('/', comments.createComment)
 
-router.get('/:commentId', comments.readComment);
+router.get('/:commentId', comments.readComment)
 
-router.put('/:commentId', comments.updateComment);
+router.put('/:commentId', comments.updateComment)
 
-router.delete('/:commentId', comments.deleteComment);
+router.delete('/:commentId', comments.deleteComment)
 
-module.exports = router;
+module.exports = router

@@ -3,7 +3,6 @@ let mongoose = require('mongoose')
 let Politician = require('../api/models/politicianModel')
 let Proposal = require('../api/models/proposalModel')
 
-
 exports.loadPoliticians = async function () {
   let politicians = JSON.parse(fs.readFileSync(__dirname + '/politicians.json', 'utf-8'))
   console.log("LOADING POLITICIANS")
@@ -38,7 +37,9 @@ exports.assignProposalsToPoliticians = function () {
         console.log("politician: " + name)
         let assigned = []
         let index = 0
-        for (let i of [1, 2, 3]) {          
+        for (let i of[1,
+          2,
+          3]) {
           index = genRandom(proposals.length)
           if (assigned.includes(index)) {
             continue
@@ -46,17 +47,19 @@ exports.assignProposalsToPoliticians = function () {
             assigned.push(index)
           }
         }
-        let relations = assigned.map(function(x) {
-          return {
-            proposal: proposals[x]._id,
-            evidences: []
-          }
+        let relations = assigned.map(function (x) {
+          return {proposal: proposals[x]._id, evidences: []}
         })
-        relations.forEach(function(item) {
+        relations.forEach(function (item) {
           console.log(item)
-          Politician.update({"_id": politician._id}, {"$push": {"proposals": item }}, 
-            function(err) {
-              console.log(err)
+          Politician.update({
+            "_id": politician._id
+          }, {
+            "$push": {
+              "proposals": item
+            }
+          }, function (err) {
+            console.log(err)
           })
         })
       }

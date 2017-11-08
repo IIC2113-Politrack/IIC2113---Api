@@ -1,20 +1,6 @@
-'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-var Proposal = require('./proposalModel');
-
-var ProposalSchema = new Schema({
-  proposal: {
-    type: Schema.Types.ObjectId,
-    ref: 'Proposal',
-  },
-  evidences: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Evidence'
-  }]
-}, {
-  _id: false
-})
+'use strict'
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var PoliticianSchema = new Schema({
   firstname: {
@@ -35,39 +21,42 @@ var PoliticianSchema = new Schema({
   slogan: {
     type: String
   },
-  proposals: [ProposalSchema]
-}, {
-  timestamps: true
-});
-
+  commitments: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Commitment'
+    }
+  ]
+}, {timestamps: true})
 
 PoliticianSchema.methods.addProposal = function addProposal(proposalId) {
   return new Promise((resolve, reject) => {
-    let result = null;
-    this.proposals.push({
-      proposal: proposalId,
-      evidences: []
-    });
+    let result = null
+    this
+      .commitments
+      .push({proposal: proposalId, evidences: []})
     this.save(function (error, updatedPolitician) {
       if (error) {
-        console.log(error);
-        reject(error);
+        console.log(error)
+        reject(error)
         return
       } else {
         console.log("Proposal added to politician " + updatedPolitician.firstname + " " + updatedPolitician.lastname)
         resolve(updatedPolitician)
         return
       }
-    });
+    })
   })
-};
+}
 
 PoliticianSchema.methods.addEvidence = function addEvidence(evidenceId, proposalId) {
-  let result = null;
+  let result = null
   return new Promise((resolve, reject) => {
     for (const proposal of this.proposals) {
       if (proposal.proposal == proposalId) {
-        proposal.evidences.push(evidenceId)
+        proposal
+          .evidences
+          .push(evidenceId)
         this.save(function (error, updatedPolitician) {
           if (error) {
             reject(error)
@@ -79,6 +68,6 @@ PoliticianSchema.methods.addEvidence = function addEvidence(evidenceId, proposal
       }
     }
   })
-};
+}
 
-module.exports = mongoose.model('Politician', PoliticianSchema);
+module.exports = mongoose.model('Politician', PoliticianSchema)

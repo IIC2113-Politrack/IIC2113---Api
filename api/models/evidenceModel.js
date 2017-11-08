@@ -1,6 +1,6 @@
-'use strict';
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+'use strict'
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var EvidenceSchema = new Schema({
   description: {
@@ -15,9 +15,6 @@ var EvidenceSchema = new Schema({
   format: {
     type: String
   }
-}, {
-  timestamps: true
-});
+}, {timestamps: true})
 
-
-module.exports = mongoose.model('Evidence', EvidenceSchema);
+module.exports = mongoose.model('Evidence', EvidenceSchema)
