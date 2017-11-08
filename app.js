@@ -1,3 +1,4 @@
+require('dotenv').config()
 let express = require('express')
 let cors = require('cors')
 let path = require('path')
@@ -27,7 +28,7 @@ mongoose.connect(mongoDB, {useMongoClient: true})
 
 mongoose
   .connection
-  .on('error', function () {
+  .on('error', function (err) {
     console.log('Mongoose default connection error: ' + err)
     if (err.message.code === 'ETIMEDOUT') {
       console.log(err)

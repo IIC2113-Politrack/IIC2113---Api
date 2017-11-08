@@ -9,7 +9,7 @@
     "devstart": "nodemon ./bin/www"
   },
   "engines": {
-    "node": "9.0.0"
+    "node": "8.9.0"
   },
   "repository": {
     "type": "git",
