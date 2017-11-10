@@ -1,0 +1,738 @@
+{
+	"variables": [],
+	"info": {
+		"name": "POLITRAP Localhost",
+		"_postman_id": "0e79d936-2d73-13a9-e679-f43910580e66",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/users",
+					"request": {
+						"url": "localhost:3000/api/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/users",
+					"request": {
+						"url": "localhost:3000/api/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstname\": \"Cristian\",\n\t\"lastname\": \"Carreño\",\n\t\"email\": \"cicarreno@uc.cl\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/users/:id",
+					"request": {
+						"url": "localhost:3000/api/users/59c841eaf5a55e7557c78a54",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/users/:id",
+					"request": {
+						"url": "localhost:3000/api/users/59c83daaae19a3722718e9e8",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isPolitician\": true\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/users/:id",
+					"request": {
+						"url": "localhost:3000/api/users/59c83bbf3f5c15712fd03ab0",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/comments",
+					"request": {
+						"url": "localhost:3000/api/comments",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/comments",
+					"request": {
+						"url": "localhost:3000/api/comments",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"content\": \"buena propuesta!\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/comments/:id",
+					"request": {
+						"url": "localhost:3000/api/comments/59c888b370cf080a07f5179c",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/comments/:id",
+					"request": {
+						"url": "localhost:3000/api/comments/59c8886270cf080a07f5179a",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"content\": \"que mala propuesta :D\"}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/comments/:id",
+					"request": {
+						"url": "localhost:3000/api/comments/59c8886270cf080a07f5179a",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposals",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/proposals",
+					"request": {
+						"url": "localhost:3000/api/proposals",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/proposals",
+					"request": {
+						"url": "localhost:3000/api/proposals",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 445,\n        \"title\": \"CORRIENDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n        \"slug\": \"marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"get_absolute_url\": \"/propuestas/detail/marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"proposer\": \"CeballosConsejero\",\n        \"created\": \"2017-10-16T14:06:58.766255Z\",\n        \"clasification\": \"energia\",\n        \"is_local_meeting\": true,\n        \"nro_supports\": 3,\n        \"evidences\": [],\n        \"state\": false,\n        \"data\": {\n            \"title\": \"MARCHANDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n            \"terms_and_conditions\": true,\n            \"solution_at_the_end\": \"Dictar una Ley que permita generar energía a nivel domiciliario mediante Organizaciones Territoriales.\\r\\nPaneles Solares para producir energía. Energia Eléctrica Off Gread y Calentamiento de Agua y mas adelante Bio-gas de vertederos\\r\\nDictar una ley para la instalacion de sitemas y paneles por empresarios locales e instaladortes autorizados, con creditos blandos para insumos, asociatividad Corfo-Fosis etc.  En la construccion de nuevos barrios y construcciones locales.\\r\\nTender hacia la autonomía energetica de los hogares y unidades territoriales, especialmente rurales, desconectandolas del monopolio de las Grandes Empresas Generadoras que deben quedar para el consumo industrial.\",\n            \"when\": \"4_year\",\n            \"problem\": \"Es el alto costo a nivel domiciliario de la energía, sobre todo en Electricidad y Calefacción. La captura de los clientes por Monopolios como son las distribuidoras de electricidad y la licitación a las grandes empresas en caso de instalar sistemas autonomos o de ahorro de energía, junto con la construcción de las poblaciones.\",\n            \"clasification\": \"energia\",\n            \"causes\": \"La producción de energía por megaempresas electricas, contaminantes y concentradoras de mercados\\r\\nLa Existencias de Monopolios de comercialización de la energía.\\r\\nLicitacion de las instalaciones alternativas, a nivel macro sin considerar empresas locales\"\n        }\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/proposals/:id",
+					"request": {
+						"url": "localhost:3000/api/proposals/5a027dc147bd6b7f1d762548",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/proposals/:id",
+					"request": {
+						"url": "localhost:3000/api/proposals/5a026d333fe9ca7aab6815ab",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"proposer\": \"Vicente Fuenzalida\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/proposals/:id",
+					"request": {
+						"url": "localhost:3000/api/proposals/5a037fddd45eb7ea2ec08bfa",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commitments",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/commitments",
+					"request": {
+						"url": "localhost:3000/api/commitments",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments",
+					"request": {
+						"url": "localhost:3000/api/commitments",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments/:id",
+					"request": {
+						"url": "localhost:3000/api/commitments/5a03809dd25be9ea8a3867ce",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments/:id/evidences",
+					"request": {
+						"url": "localhost:3000/api/commitments/5a03809dd25be9ea8a3867ce/evidences",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments/:id/evidences",
+					"request": {
+						"url": "localhost:3000/api/commitments/5a03809dd25be9ea8a3867ce/evidences",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\": \"Criminalssss\",\n\t\"isGood\": false,\n    \"data\": \"base64supervideo\",\n\t\"format\": \"mp4\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments/:id",
+					"request": {
+						"url": "localhost:3000/api/commitments/59ed19be85f9ef10dcd3bfa6",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/commitments/:id",
+					"request": {
+						"url": "localhost:3000/api/commitments/5a0271cd6af9b97c44674811",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Evidences",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/evidences",
+					"request": {
+						"url": "localhost:3000/api/evidences",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/evidences",
+					"request": {
+						"url": "localhost:3000/api/evidences",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"politicianId\": \"59ee6399fe09f95101fe6639\",\n    \"proposalId\": \"59ee639afe09f95101fe664c\",\n    \"data\": {\n    \t\"description\": \"Criminal\",\n    \t\"isGood\": true,\n\t    \"data\": \"base64\",\n    \t\"format\": \"file\"\n    }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/evidences/:id",
+					"request": {
+						"url": "localhost:3000/api/evidences/5a027ce847bd6b7f1d762545",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/evidences/:id",
+					"request": {
+						"url": "localhost:3000/api/evidences/5a027ce847bd6b7f1d762546",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"isGood\": false\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/evidences/:id",
+					"request": {
+						"url": "localhost:3000/api/evidences/5a027ce847bd6b7f1d762546",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organizations",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/organizations",
+					"request": {
+						"url": "localhost:3000/api/organizations",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/organizations",
+					"request": {
+						"url": "localhost:3000/api/organizations",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Asociación de Trap\",\n\t\"description\": \"el wason bb\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/organizations/:id",
+					"request": {
+						"url": "localhost:3000/api/organizations/59c8895870cf080a07f5179e",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/organizations/:id",
+					"request": {
+						"url": "localhost:3000/api/organizations/59c8895870cf080a07f5179e",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"description\": \"y qué pasó!\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/organizations/:id",
+					"request": {
+						"url": "localhost:3000/api/organizations/59c8873327105d09a7306d3d",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Politicians",
+			"description": "",
+			"item": [
+				{
+					"name": "localhost:3000/api/politicians",
+					"request": {
+						"url": "localhost:3000/api/politicians/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Carolina\",\n    \"lastname\": \"Goic\",\n    \"party\": \"Democracia Cristiana\",\n    \"charge\": \"Presidente\",\n    \"biography\": \"Nací el 20 de diciembre de 1972. Tras ser exonerado mi padre de la Universidad de Chile, dejamos el país con mi familia hasta 1986\",\n    \"slogan\": \"Yo me atrevo\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians",
+					"request": {
+						"url": "localhost:3000/api/politicians/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Sebastián\",\n    \"lastname\": \"Piñera\",\n    \"party\": \"UDI-RN-PRI-EVOPOLI\",\n    \"charge\": \"Presidente\",\n    \"biography\": \"Miguel Juan Sebastián Piñera Echenique Santiago, 1 de diciembre de 1949 es un empresario, inversor y político chileno. Fue presidente de Chile entre los años 2010 y 2014 También fue el primer presidente pro tempore de CELAC.\",\n    \"slogan\": \"Vienen tiempos mejores\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians/:id/commitments",
+					"request": {
+						"url": "localhost:3000/api/politicians/5a037eb37b29bbe962084d9f/commitments",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalId\": \"5a026d333fe9ca7aab6815ab\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians/:id/commitments",
+					"request": {
+						"url": "localhost:3000/api/politicians/5a037eb37b29bbe962084d9f/commitments",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"proposalId\": \"5a027dc147bd6b7f1d762548\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians/:id",
+					"request": {
+						"url": "localhost:3000/api/politicians/5a037eb37b29bbe962084d9f",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"slogan\": \"Vienen tiempos mejores\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians/:id",
+					"request": {
+						"url": "localhost:3000/api/politicians/5a037eb37b29bbe962084d9f",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Joaquín\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3000/api/politicians/:id",
+					"request": {
+						"url": "localhost:3000/api/politicians/5a037cd3d9b313e7688eba38",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"slogan\": \"Vienen tiempos mejores\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "local",
+			"request": {
+				"url": "localhost:3000",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "deployed",
+			"request": {
+				"url": "localhost:3000",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"variables": [],
 	"info": {
-		"name": "POLITRAP",
+		"name": "POLITRAP Heroku",
 		"_postman_id": "0e79d936-2d73-13a9-e679-f43910580e66",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
@@ -12,9 +12,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/users",
+					"name": "https://politrap-api.herokuapp.com/api/users",
 					"request": {
-						"url": "http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com/users",
+						"url": "https://politrap-api.herokuapp.com/api/users",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -23,9 +23,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/users",
+					"name": "https://politrap-api.herokuapp.com/api/users",
 					"request": {
-						"url": "localhost:3000/users",
+						"url": "https://politrap-api.herokuapp.com/api/users",
 						"method": "POST",
 						"header": [
 							{
@@ -43,9 +43,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/users/:id",
+					"name": "https://politrap-api.herokuapp.com/api/users/:id",
 					"request": {
-						"url": "localhost:3000/users/59c841eaf5a55e7557c78a54",
+						"url": "https://politrap-api.herokuapp.com/api/users/59c841eaf5a55e7557c78a54",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -54,9 +54,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/users/:id",
+					"name": "https://politrap-api.herokuapp.com/api/users/:id",
 					"request": {
-						"url": "localhost:3000/users/59c83daaae19a3722718e9e8",
+						"url": "https://politrap-api.herokuapp.com/api/users/59c83daaae19a3722718e9e8",
 						"method": "PUT",
 						"header": [
 							{
@@ -74,9 +74,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/users/:id",
+					"name": "https://politrap-api.herokuapp.com/api/users/:id",
 					"request": {
-						"url": "localhost:3000/users/59c83bbf3f5c15712fd03ab0",
+						"url": "https://politrap-api.herokuapp.com/api/users/59c83bbf3f5c15712fd03ab0",
 						"method": "DELETE",
 						"header": [
 							{
@@ -100,9 +100,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/comments",
+					"name": "https://politrap-api.herokuapp.com/api/comments",
 					"request": {
-						"url": "localhost:3000/comments",
+						"url": "https://politrap-api.herokuapp.com/api/comments",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -111,9 +111,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/comments",
+					"name": "https://politrap-api.herokuapp.com/api/comments",
 					"request": {
-						"url": "localhost:3000/comments",
+						"url": "https://politrap-api.herokuapp.com/api/comments",
 						"method": "POST",
 						"header": [
 							{
@@ -131,9 +131,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/comments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/comments/:id",
 					"request": {
-						"url": "localhost:3000/comments/59c888b370cf080a07f5179c",
+						"url": "https://politrap-api.herokuapp.com/api/comments/59c888b370cf080a07f5179c",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -142,9 +142,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/comments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/comments/:id",
 					"request": {
-						"url": "localhost:3000/comments/59c8886270cf080a07f5179a",
+						"url": "https://politrap-api.herokuapp.com/api/comments/59c8886270cf080a07f5179a",
 						"method": "PUT",
 						"header": [
 							{
@@ -162,9 +162,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/comments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/comments/:id",
 					"request": {
-						"url": "localhost:3000/comments/59c8886270cf080a07f5179a",
+						"url": "https://politrap-api.herokuapp.com/api/comments/59c8886270cf080a07f5179a",
 						"method": "DELETE",
 						"header": [
 							{
@@ -188,9 +188,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/proposals",
+					"name": "https://politrap-api.herokuapp.com/api/proposals",
 					"request": {
-						"url": "localhost:3000/api/proposals",
+						"url": "https://politrap-api.herokuapp.com/api/proposals",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -199,9 +199,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/proposals",
+					"name": "https://politrap-api.herokuapp.com/api/proposals",
 					"request": {
-						"url": "localhost:3000/api/proposals",
+						"url": "https://politrap-api.herokuapp.com/api/proposals",
 						"method": "POST",
 						"header": [
 							{
@@ -212,16 +212,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"id\": 349,\n        \"title\": \"CORRIENDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n        \"slug\": \"marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"get_absolute_url\": \"/propuestas/detail/marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"proposer\": \"CeballosConsejero\",\n        \"created\": \"2017-10-16T14:06:58.766255Z\",\n        \"clasification\": \"energia\",\n        \"is_local_meeting\": true,\n        \"nro_supports\": 3,\n        \"evidences\": [],\n        \"state\": false,\n        \"data\": {\n            \"title\": \"MARCHANDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n            \"terms_and_conditions\": true,\n            \"solution_at_the_end\": \"Dictar una Ley que permita generar energía a nivel domiciliario mediante Organizaciones Territoriales.\\r\\nPaneles Solares para producir energía. Energia Eléctrica Off Gread y Calentamiento de Agua y mas adelante Bio-gas de vertederos\\r\\nDictar una ley para la instalacion de sitemas y paneles por empresarios locales e instaladortes autorizados, con creditos blandos para insumos, asociatividad Corfo-Fosis etc.  En la construccion de nuevos barrios y construcciones locales.\\r\\nTender hacia la autonomía energetica de los hogares y unidades territoriales, especialmente rurales, desconectandolas del monopolio de las Grandes Empresas Generadoras que deben quedar para el consumo industrial.\",\n            \"when\": \"4_year\",\n            \"problem\": \"Es el alto costo a nivel domiciliario de la energía, sobre todo en Electricidad y Calefacción. La captura de los clientes por Monopolios como son las distribuidoras de electricidad y la licitación a las grandes empresas en caso de instalar sistemas autonomos o de ahorro de energía, junto con la construcción de las poblaciones.\",\n            \"clasification\": \"energia\",\n            \"causes\": \"La producción de energía por megaempresas electricas, contaminantes y concentradoras de mercados\\r\\nLa Existencias de Monopolios de comercialización de la energía.\\r\\nLicitacion de las instalaciones alternativas, a nivel macro sin considerar empresas locales\"\n        }\n    }"
+							"raw": "{\n        \"id\": 445,\n        \"title\": \"CORRIENDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n        \"slug\": \"marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"get_absolute_url\": \"/propuestas/detail/marchando-hacia-la-liberacion-energetica-de-los-ho\",\n        \"proposer\": \"CeballosConsejero\",\n        \"created\": \"2017-10-16T14:06:58.766255Z\",\n        \"clasification\": \"energia\",\n        \"is_local_meeting\": true,\n        \"nro_supports\": 3,\n        \"evidences\": [],\n        \"state\": false,\n        \"data\": {\n            \"title\": \"MARCHANDO HACIA LA LIBERACION ENERGETICA DE LOS HOGARES\",\n            \"terms_and_conditions\": true,\n            \"solution_at_the_end\": \"Dictar una Ley que permita generar energía a nivel domiciliario mediante Organizaciones Territoriales.\\r\\nPaneles Solares para producir energía. Energia Eléctrica Off Gread y Calentamiento de Agua y mas adelante Bio-gas de vertederos\\r\\nDictar una ley para la instalacion de sitemas y paneles por empresarios locales e instaladortes autorizados, con creditos blandos para insumos, asociatividad Corfo-Fosis etc.  En la construccion de nuevos barrios y construcciones locales.\\r\\nTender hacia la autonomía energetica de los hogares y unidades territoriales, especialmente rurales, desconectandolas del monopolio de las Grandes Empresas Generadoras que deben quedar para el consumo industrial.\",\n            \"when\": \"4_year\",\n            \"problem\": \"Es el alto costo a nivel domiciliario de la energía, sobre todo en Electricidad y Calefacción. La captura de los clientes por Monopolios como son las distribuidoras de electricidad y la licitación a las grandes empresas en caso de instalar sistemas autonomos o de ahorro de energía, junto con la construcción de las poblaciones.\",\n            \"clasification\": \"energia\",\n            \"causes\": \"La producción de energía por megaempresas electricas, contaminantes y concentradoras de mercados\\r\\nLa Existencias de Monopolios de comercialización de la energía.\\r\\nLicitacion de las instalaciones alternativas, a nivel macro sin considerar empresas locales\"\n        }\n    }"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:3000/proposals/:id",
+					"name": "https://politrap-api.herokuapp.com/api/proposals/:id",
 					"request": {
-						"url": "localhost:3000/api/proposals/5a026d333fe9ca7aab6815ab",
+						"url": "https://politrap-api.herokuapp.com/api/proposals/5a027dc147bd6b7f1d762548",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -230,9 +230,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/proposals/:id",
+					"name": "https://politrap-api.herokuapp.com/api/proposals/:id",
 					"request": {
-						"url": "localhost:3000/api/proposals/59ed19be85f9ef10dcd3bfa6",
+						"url": "https://politrap-api.herokuapp.com/api/proposals/5a026d333fe9ca7aab6815ab",
 						"method": "PUT",
 						"header": [
 							{
@@ -243,16 +243,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"proposer\": \"CeballosConsejero\"\n}"
+							"raw": "{\n\t\"proposer\": \"Vicente Fuenzalida\"\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:3000/proposals/:id",
+					"name": "https://politrap-api.herokuapp.com/api/proposals/:id",
 					"request": {
-						"url": "localhost:3000/api/proposals/59ed1f138a2a43131245dad9",
+						"url": "https://politrap-api.herokuapp.com/api/proposals/5a037fddd45eb7ea2ec08bfa",
 						"method": "DELETE",
 						"header": [
 							{
@@ -276,9 +276,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/commitments",
+					"name": "https://politrap-api.herokuapp.com/api/commitments",
 					"request": {
-						"url": "localhost:3000/api/commitments",
+						"url": "https://politrap-api.herokuapp.com/api/commitments",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -287,9 +287,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments",
+					"name": "https://politrap-api.herokuapp.com/api/commitments",
 					"request": {
-						"url": "localhost:3000/api/commitments",
+						"url": "https://politrap-api.herokuapp.com/api/commitments",
 						"method": "POST",
 						"header": [
 							{
@@ -307,9 +307,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/commitments/:id",
 					"request": {
-						"url": "localhost:3000/api/commitments/5a027ddb47bd6b7f1d762549",
+						"url": "https://politrap-api.herokuapp.com/api/commitments/5a03809dd25be9ea8a3867ce",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -318,9 +318,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments/:id/evidences",
+					"name": "https://politrap-api.herokuapp.com/api/commitments/:id/evidences",
 					"request": {
-						"url": "localhost:3000/api/commitments/5a027ddb47bd6b7f1d762549/evidences",
+						"url": "https://politrap-api.herokuapp.com/api/commitments/5a03809dd25be9ea8a3867ce/evidences",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -329,9 +329,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments/:id/evidences",
+					"name": "https://politrap-api.herokuapp.com/api/commitments/:id/evidences",
 					"request": {
-						"url": "localhost:3000/api/commitments/5a027ddb47bd6b7f1d762549/evidences",
+						"url": "https://politrap-api.herokuapp.com/api/commitments/5a03809dd25be9ea8a3867ce/evidences",
 						"method": "POST",
 						"header": [
 							{
@@ -342,16 +342,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"description\": \"Feofeo\",\n\t\"isGood\": false,\n    \"data\": \"base64lalala\",\n\t\"format\": \"file\"\n}"
+							"raw": "{\n\t\"description\": \"Criminalssss\",\n\t\"isGood\": false,\n    \"data\": \"base64supervideo\",\n\t\"format\": \"mp4\"\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/commitments/:id",
 					"request": {
-						"url": "localhost:3000/api/commitments/59ed19be85f9ef10dcd3bfa6",
+						"url": "https://politrap-api.herokuapp.com/api/commitments/59ed19be85f9ef10dcd3bfa6",
 						"method": "PUT",
 						"header": [
 							{
@@ -369,9 +369,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/commitments/:id",
+					"name": "https://politrap-api.herokuapp.com/api/commitments/:id",
 					"request": {
-						"url": "localhost:3000/api/commitments/5a0271cd6af9b97c44674811",
+						"url": "https://politrap-api.herokuapp.com/api/commitments/5a0271cd6af9b97c44674811",
 						"method": "DELETE",
 						"header": [
 							{
@@ -395,9 +395,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/evidences",
+					"name": "https://politrap-api.herokuapp.com/api/evidences",
 					"request": {
-						"url": "localhost:3000/api/evidences",
+						"url": "https://politrap-api.herokuapp.com/api/evidences",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -406,9 +406,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/evidences",
+					"name": "https://politrap-api.herokuapp.com/api/evidences",
 					"request": {
-						"url": "localhost:3000/api/evidences",
+						"url": "https://politrap-api.herokuapp.com/api/evidences",
 						"method": "POST",
 						"header": [
 							{
@@ -426,9 +426,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/evidences/:id",
+					"name": "https://politrap-api.herokuapp.com/api/evidences/:id",
 					"request": {
-						"url": "localhost:3000/api/evidences/5a027e0347bd6b7f1d76254a",
+						"url": "https://politrap-api.herokuapp.com/api/evidences/5a027ce847bd6b7f1d762545",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -437,9 +437,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/evidences/:id",
+					"name": "https://politrap-api.herokuapp.com/api/evidences/:id",
 					"request": {
-						"url": "localhost:3000/evidences/59c88adac853e80aa69e6a51",
+						"url": "https://politrap-api.herokuapp.com/api/evidences/5a027ce847bd6b7f1d762546",
 						"method": "PUT",
 						"header": [
 							{
@@ -450,16 +450,16 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"isGood\": false\n}"
 						},
 						"description": ""
 					},
 					"response": []
 				},
 				{
-					"name": "localhost:3000/evidences/:id",
+					"name": "https://politrap-api.herokuapp.com/api/evidences/:id",
 					"request": {
-						"url": "localhost:3000/api/evidences/59ee650f9c601a512a9e771b",
+						"url": "https://politrap-api.herokuapp.com/api/evidences/5a027ce847bd6b7f1d762546",
 						"method": "DELETE",
 						"header": [
 							{
@@ -483,9 +483,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/organizations",
+					"name": "https://politrap-api.herokuapp.com/api/organizations",
 					"request": {
-						"url": "localhost:3000/organizations",
+						"url": "https://politrap-api.herokuapp.com/api/organizations",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -494,9 +494,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/organizations",
+					"name": "https://politrap-api.herokuapp.com/api/organizations",
 					"request": {
-						"url": "localhost:3000/organizations",
+						"url": "https://politrap-api.herokuapp.com/api/organizations",
 						"method": "POST",
 						"header": [
 							{
@@ -514,9 +514,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/organizations/:id",
+					"name": "https://politrap-api.herokuapp.com/api/organizations/:id",
 					"request": {
-						"url": "localhost:3000/organizations/59c8895870cf080a07f5179e",
+						"url": "https://politrap-api.herokuapp.com/api/organizations/59c8895870cf080a07f5179e",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -525,9 +525,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/organizations/:id",
+					"name": "https://politrap-api.herokuapp.com/api/organizations/:id",
 					"request": {
-						"url": "localhost:3000/organizations/59c8895870cf080a07f5179e",
+						"url": "https://politrap-api.herokuapp.com/api/organizations/59c8895870cf080a07f5179e",
 						"method": "PUT",
 						"header": [
 							{
@@ -545,9 +545,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/organizations/:id",
+					"name": "https://politrap-api.herokuapp.com/api/organizations/:id",
 					"request": {
-						"url": "localhost:3000/organizations/59c8873327105d09a7306d3d",
+						"url": "https://politrap-api.herokuapp.com/api/organizations/59c8873327105d09a7306d3d",
 						"method": "DELETE",
 						"header": [
 							{
@@ -571,9 +571,9 @@
 			"description": "",
 			"item": [
 				{
-					"name": "localhost:3000/api/politicians",
+					"name": "https://politrap-api.herokuapp.com/api/politicians",
 					"request": {
-						"url": "localhost:3000/api/politicians/",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/",
 						"method": "GET",
 						"header": [
 							{
@@ -591,9 +591,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians",
+					"name": "https://politrap-api.herokuapp.com/api/politicians",
 					"request": {
-						"url": "localhost:3000/api/politicians/",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/",
 						"method": "POST",
 						"header": [
 							{
@@ -611,9 +611,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians/:id/commitments",
+					"name": "https://politrap-api.herokuapp.com/api/politicians/:id/commitments",
 					"request": {
-						"url": "localhost:3000/api/politicians/5a026ac276d1e9796ed7a109/commitments",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/5a037eb37b29bbe962084d9f/commitments",
 						"method": "GET",
 						"header": [
 							{
@@ -631,9 +631,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians/:id/commitments",
+					"name": "https://politrap-api.herokuapp.com/api/politicians/:id/commitments",
 					"request": {
-						"url": "localhost:3000/api/politicians/5a026ac276d1e9796ed7a109/commitments",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/5a037eb37b29bbe962084d9f/commitments",
 						"method": "POST",
 						"header": [
 							{
@@ -651,9 +651,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians/:id",
+					"name": "https://politrap-api.herokuapp.com/api/politicians/:id",
 					"request": {
-						"url": "localhost:3000/api/politicians/5a026ac276d1e9796ed7a109",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/5a037eb37b29bbe962084d9f",
 						"method": "GET",
 						"header": [
 							{
@@ -671,9 +671,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians/:id",
+					"name": "https://politrap-api.herokuapp.com/api/politicians/:id",
 					"request": {
-						"url": "localhost:3000/api/politicians/5a026ac276d1e9796ed7a109",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/5a037eb37b29bbe962084d9f",
 						"method": "PUT",
 						"header": [
 							{
@@ -691,9 +691,9 @@
 					"response": []
 				},
 				{
-					"name": "localhost:3000/api/politicians/:id",
+					"name": "https://politrap-api.herokuapp.com/api/politicians/:id",
 					"request": {
-						"url": "localhost:3000/api/politicians/5a026ed5c6dcd97b738c9785",
+						"url": "https://politrap-api.herokuapp.com/api/politicians/5a037cd3d9b313e7688eba38",
 						"method": "DELETE",
 						"header": [
 							{
@@ -705,26 +705,6 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"slogan\": \"Vienen tiempos mejores\"\n}"
-						},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "localhost:3000/api/politicians/:id/proposals",
-					"request": {
-						"url": "localhost:3000/api/politicians/59ed6c2842b0682450c56cb1/proposals",
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"description": ""
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"proposalId\": \"59ed6c6242b0682450c56cb2\"\n}"
 						},
 						"description": ""
 					},
@@ -746,7 +726,7 @@
 		{
 			"name": "deployed",
 			"request": {
-				"url": "http://ec2-18-221-146-123.us-east-2.compute.amazonaws.com",
+				"url": "https://politrap-api.herokuapp.com",
 				"method": "GET",
 				"header": [],
 				"body": {},
