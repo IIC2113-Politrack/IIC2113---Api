@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var evidences = require('../controllers/evidenceController')
+let express = require('express')
+let router = express.Router()
+let evidences = require('../controllers/evidenceController')
 
 router.get('/:evidenceId', evidences.readEvidence)
 

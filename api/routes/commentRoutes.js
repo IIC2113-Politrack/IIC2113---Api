@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var comments = require('../controllers/commentController')
+let express = require('express')
+let router = express.Router()
+let comments = require('../controllers/commentController')
 
 /* GET home page. */
 router.get('/', comments.listAllComments)

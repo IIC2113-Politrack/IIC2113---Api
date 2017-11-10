@@ -1,6 +1,6 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Politician = require('../models/politicianModel'),
   Commitment = require('../models/commitmentModel')
 
@@ -13,10 +13,11 @@ exports.listAllPoliticians = function (req, res) {
         res.json(politicians)
       }
     })
+    .select('-id -commitmentsFromVI -__v -createdAt -updatedAt')
 }
 
 exports.createPolitician = function (req, res) {
-  var new_politician = new Politician(req.body)
+  let new_politician = new Politician(req.body)
   new_politician.save(function (err, politician) {
     if (err) {
       res.send(err)
@@ -29,11 +30,12 @@ exports.createPolitician = function (req, res) {
 exports.readPolitician = function (req, res) {
   Politician
     .findById(req.params.politicianId)
-    .populate('commitments')
+    .select('-id -commitmentsFromVI -__v -createdAt -updatedAt')
+    .populate('commitments', '-id -__v -createdAt -updatedAt')
     .exec(function (err, politician) {
       if (err) {
         res.send(err)
-      } else if (!politician){
+      } else if (!politician) {
         res.status(204).send()
       } else {
         res.json(politician)
@@ -118,7 +120,8 @@ exports.getPoliticianCommitments = function (req, res) {
           .find({
             politician: politician._id
           })
-          .populate('proposal')
+          .select('-id -__v -createdAt -updatedAt')
+          .populate('proposal', '-id -__v -createdAt -updatedAt')
           .exec(function (err, commitments) {
             if (err) {
               res.send(err)

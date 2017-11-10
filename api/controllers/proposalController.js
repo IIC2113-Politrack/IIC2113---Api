@@ -1,6 +1,6 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Proposal = require('../models/proposalModel')
 
 exports.listAllProposals = function (req, res) {
@@ -15,7 +15,7 @@ exports.listAllProposals = function (req, res) {
 }
 
 exports.createProposal = function (req, res) {
-  var new_proposal = new Proposal(req.body)
+  let new_proposal = new Proposal(req.body)
   new_proposal.save(function (err, proposal) {
     if (err) {
       res.send(err)

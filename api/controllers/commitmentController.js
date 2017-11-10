@@ -1,8 +1,9 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Commitment = require('../models/commitmentModel'),
-  Evidence = require('../models/evidenceModel')
+  Evidence = require('../models/evidenceModel'),
+  mt = require('moment-timezone')
 
 exports.listAllCommitments = function (req, res) {
   Commitment
@@ -12,13 +13,14 @@ exports.listAllCommitments = function (req, res) {
       } else {
         res.json(commitments)
       }
-    })
+    }).select('-id -__v -createdAt -updatedAt')
 }
 
 exports.readCommitment = function (req, res) {
   Commitment
     .findById(req.params.commitmentId)
-    .populate('proposal')
+    .select('-id -__v -createdAt -updatedAt')
+    .populate('proposal', '-id -__v -createdAt -updatedAt')
     .exec(function (err, commitment) {
       if (err) {
         res.send(err)
@@ -50,7 +52,7 @@ exports.deleteCommitment = function (req, res) {
 exports.getCommitmentEvidences = function (req, res) {
   Commitment
     .findById(req.params.commitmentId)
-    .populate('evidences')
+    .populate('evidences', '-__v -createdAt -updatedAt')
     .exec(function (err, commitment) {
       if (err) {
         res.send(err)

@@ -1,6 +1,6 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Organization = require('../models/organizationModel')
 
 exports.listAllOrganizations = function (req, res) {
@@ -15,7 +15,7 @@ exports.listAllOrganizations = function (req, res) {
 }
 
 exports.createOrganization = function (req, res) {
-  var new_organization = new Organization(req.body)
+  let new_organization = new Organization(req.body)
   new_organization.save(function (err, organization) {
     if (err) {
       res.send(err)

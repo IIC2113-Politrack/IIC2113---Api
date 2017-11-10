@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var users = require('../controllers/userController')
+let express = require('express')
+let router = express.Router()
+let users = require('../controllers/userController')
 
 /* GET home page. */
 router.get('/', users.listAllUsers)

@@ -1,6 +1,6 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Comment = require('../models/commentModel')
 
 exports.listAllComments = function (req, res) {
@@ -15,7 +15,7 @@ exports.listAllComments = function (req, res) {
 }
 
 exports.createComment = function (req, res) {
-  var new_comment = new Comment(req.body)
+  let new_comment = new Comment(req.body)
   new_comment.save(function (err, comment) {
     if (err) {
       res.send(err)

@@ -1,8 +1,8 @@
 'use strict'
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
-var OrganizationSchema = new Schema({
+let OrganizationSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -15,6 +15,8 @@ var OrganizationSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   }
-}, {timestamps: true})
+}, {
+  timestamps: true
+})
 
 module.exports = mongoose.model('Organization', OrganizationSchema)

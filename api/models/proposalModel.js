@@ -1,8 +1,8 @@
 'use strict'
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
-var ProposalSchema = new Schema({
+let ProposalSchema = new Schema({
   id: {
     type: Number
   },
@@ -59,6 +59,8 @@ var ProposalSchema = new Schema({
   state: {
     type: Boolean
   }
-}, {timestamps: true})
+}, {
+  timestamps: true
+})
 
 module.exports = mongoose.model('Proposal', ProposalSchema)

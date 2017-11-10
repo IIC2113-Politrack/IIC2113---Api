@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var commitments = require('../controllers/commitmentController')
+let express = require('express')
+let router = express.Router()
+let commitments = require('../controllers/commitmentController')
 
 /* GET home page. */
 router.get('/', commitments.listAllCommitments)
