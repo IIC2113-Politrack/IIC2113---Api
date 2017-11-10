@@ -3,6 +3,12 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var CommitmentSchema = new Schema({
+  id: {
+    type: String
+  },
+  details: {
+    type: String
+  },
   proposal: {
     type: Schema.Types.ObjectId,
     ref: 'Proposal'

@@ -43,8 +43,7 @@ yarn-error.log
 Thumbs.db
 
 # Initial DB 
-bin/proposals.json
-bin/politicians.json
+bin/*.json
 
 # Environment variables
 .env
