@@ -1,8 +1,8 @@
 'use strict'
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
-var CommentSchema = new Schema({
+let CommentSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -15,6 +15,8 @@ var CommentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Evidence'
   }
-}, {timestamps: true})
+}, {
+  timestamps: true
+})
 
 module.exports = mongoose.model('Comment', CommentSchema)

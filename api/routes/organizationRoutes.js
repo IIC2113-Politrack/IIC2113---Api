@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var organizations = require('../controllers/organizationController')
+let express = require('express')
+let router = express.Router()
+let organizations = require('../controllers/organizationController')
 
 /* GET home page. */
 router.get('/', organizations.listAllOrganizations)

@@ -1,8 +1,14 @@
 'use strict'
-var mongoose = require('mongoose')
-var Schema = mongoose.Schema
+let mongoose = require('mongoose')
+let Schema = mongoose.Schema
 
-var PoliticianSchema = new Schema({
+let PoliticianSchema = new Schema({
+  id: {
+    type: String
+  },
+  get_absolute_url: {
+    type: String
+  },
   firstname: {
     type: String
   },
@@ -21,20 +27,26 @@ var PoliticianSchema = new Schema({
   slogan: {
     type: String
   },
-  commitments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Commitment'
-    }
-  ]
-}, {timestamps: true})
+  commitments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Commitment'
+  }],
+  commitmentsFromVI: [{
+    type: String
+  }]
+}, {
+  timestamps: true
+})
 
 PoliticianSchema.methods.addProposal = function addProposal(proposalId) {
   return new Promise((resolve, reject) => {
     let result = null
     this
       .commitments
-      .push({proposal: proposalId, evidences: []})
+      .push({
+        proposal: proposalId,
+        evidences: []
+      })
     this.save(function (error, updatedPolitician) {
       if (error) {
         console.log(error)

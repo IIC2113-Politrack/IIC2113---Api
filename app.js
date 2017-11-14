@@ -1,3 +1,4 @@
+require('dotenv').config()
 let express = require('express')
 let cors = require('cors')
 let path = require('path')
@@ -23,11 +24,13 @@ let mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 let mongoDB = process.env.MONGODB_URI || "mongodb://localhost/politrap"
 
-mongoose.connect(mongoDB, {useMongoClient: true})
+mongoose.connect(mongoDB, {
+  useMongoClient: true
+})
 
 mongoose
   .connection
-  .on('error', function () {
+  .on('error', function (err) {
     console.log('Mongoose default connection error: ' + err)
     if (err.message.code === 'ETIMEDOUT') {
       console.log(err)
@@ -38,12 +41,7 @@ mongoose
 mongoose
   .connection
   .on('connected', function () {
-    console.log('Mongoose default connection open to ' + mongoDB)
-    // console.log("starting scripts")
-    // // POPULATE THE DATABASE scripts.loadPoliticians()   .then(() => {
-    // scripts.loadProposals(15)       .then(() => {
-    // scripts.assignProposalsToPoliticians()       })   })   .catch((err) => {
-    // console.log(err)   })
+    console.log('Mongoose default connection open. Connected!')
   })
 
 // view engine setup
@@ -53,8 +51,13 @@ app.set('view engine', 'pug')
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(logger('dev'))
-app.use(bodyParser.json({limit: '5mb'}))
-app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}))
+app.use(bodyParser.json({
+  limit: '5mb'
+}))
+app.use(bodyParser.urlencoded({
+  extended: false,
+  limit: '5mb'
+}))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -84,9 +87,8 @@ app.use(function (err, req, res, next) {
   res.locals.message = err.message
   res.locals.error = req
     .app
-    .get('env') === 'development'
-    ? err
-    : {}
+    .get('env') === 'development' ?
+    err : {}
 
   // render the error page
   res.status(err.status || 500)

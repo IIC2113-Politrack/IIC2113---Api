@@ -1,32 +1,40 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   User = require('../models/userModel')
 
 exports.listAllUsers = function (req, res) {
   User
-    .find({}, function (err, user) {
-      if (err) 
+    .find({}, function (err, users) {
+      if (err) {
         res.send(err)
-      res.json(user)
+      } else {
+        res.json(users)
+      }
     })
 }
 
 exports.createUser = function (req, res) {
-  var new_user = new User(req.body)
+  let new_user = new User(req.body)
   new_user.save(function (err, user) {
-    if (err) 
+    if (err) {
       res.send(err)
-    res.json(user)
+    } else {
+      res.json(user)
+    }
   })
 }
 
 exports.readUser = function (req, res) {
   User
     .findById(req.params.userId, function (err, user) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json(user)
+      } else if (!user) {
+        res.status(204).send()
+      } else {
+        res.json(user)
+      }
     })
 }
 
@@ -37,20 +45,30 @@ exports.updateUser = function (req, res) {
     }, req.body, {
       new: true
     }, function (err, user) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json(user)
+      } else if (!user) {
+        res.status(204).send()
+      } else {
+        res.json(user)
+      }
     })
 }
 
 exports.deleteUser = function (req, res) {
 
   User
-    .remove({
+    .findOneAndRemove({
       _id: req.params.userId
     }, function (err, user) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json({message: 'User successfully deleted'})
+      } else if (!user) {
+        res.status(204).send()
+      } else {
+        res.json({
+          message: 'User successfully deleted'
+        })
+      }
     })
 }

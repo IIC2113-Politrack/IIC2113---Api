@@ -3,8 +3,6 @@
 /**
  * Module dependencies.
  */
-
-require('dotenv').config()
 let app = require('../app')
 let logger = require('morgan')
 let http = require('http')

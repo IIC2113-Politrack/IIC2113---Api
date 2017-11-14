@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var politicians = require('../controllers/politicianController')
+let express = require('express')
+let router = express.Router()
+let politicians = require('../controllers/politicianController')
 
 /* GET home page. */
 router.get('/', politicians.listAllPoliticians)

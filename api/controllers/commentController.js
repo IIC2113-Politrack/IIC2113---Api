@@ -1,32 +1,40 @@
 'use strict'
 
-var mongoose = require('mongoose'),
+let mongoose = require('mongoose'),
   Comment = require('../models/commentModel')
 
 exports.listAllComments = function (req, res) {
   Comment
-    .find({}, function (err, comment) {
-      if (err) 
+    .find({}, function (err, comments) {
+      if (err) {
         res.send(err)
-      res.json(comment)
+      } else {
+        res.json(comments)
+      }
     })
 }
 
 exports.createComment = function (req, res) {
-  var new_comment = new Comment(req.body)
+  let new_comment = new Comment(req.body)
   new_comment.save(function (err, comment) {
-    if (err) 
+    if (err) {
       res.send(err)
-    res.json(comment)
+    } else {
+      res.json(comment)
+    }
   })
 }
 
 exports.readComment = function (req, res) {
   Comment
     .findById(req.params.commentId, function (err, comment) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json(comment)
+      } else if (!comment) {
+        res.status(204).send()
+      } else {
+        res.json(comment)
+      }
     })
 }
 
@@ -37,20 +45,30 @@ exports.updateComment = function (req, res) {
     }, req.body, {
       new: true
     }, function (err, comment) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json(comment)
+      } else if (!comment) {
+        res.status(204).send()
+      } else {
+        res.json(comment)
+      }
     })
 }
 
 exports.deleteComment = function (req, res) {
 
   Comment
-    .remove({
+    .findOneAndRemove({
       _id: req.params.commentId
     }, function (err, comment) {
-      if (err) 
+      if (err) {
         res.send(err)
-      res.json({message: 'Comment successfully deleted'})
+      } else if (!comment) {
+        res.status(204).send()
+      } else {
+        res.json({
+          message: 'Comment successfully deleted'
+        })
+      }
     })
 }

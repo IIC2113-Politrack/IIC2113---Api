@@ -1,6 +1,6 @@
-var express = require('express')
-var router = express.Router()
-var proposals = require('../controllers/proposalController')
+let express = require('express')
+let router = express.Router()
+let proposals = require('../controllers/proposalController')
 
 /* GET home page. */
 router.get('/', proposals.listAllProposals)
